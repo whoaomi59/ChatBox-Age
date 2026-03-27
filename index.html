@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat PQRS con WhatsApp</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- PAGINA DE PRESENTACION -->
+    <!-- HERO MODERNO -->
+    <section
+      class="relative overflow-hidden bg-gradient-to-br from-green-500 via-emerald-500 to-teal-600 text-white"
+    >
+      <!-- efecto blur decorativo -->
+      <div
+        class="absolute top-0 left-0 w-72 h-72 bg-white/20 rounded-full blur-3xl"
+      ></div>
+      <div
+        class="absolute bottom-0 right-0 w-72 h-72 bg-black/20 rounded-full blur-3xl"
+      ></div>
+
+      <div
+        class="max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12 items-center"
+      >
+        <!-- TEXTO -->
+        <div>
+          <div class="typewriter-container mb-6">
+            <h1
+              id="typewriterTitle"
+              class="text-4xl md:text-6xl font-bold leading-tight typewriter-text"
+            >
+              
+            </h1>
+            <span class="typewriter-cursor" id="cursor">|</span>
+          </div>
+
+          <p class="text-lg opacity-90 mb-8">
+            Automatiza la atención de tu negocio, responde en segundos y nunca
+            pierdas un cliente por demora.
+          </p>
+
+          <div class="flex gap-4 flex-wrap">
+            <button
+              id="chatToggle"
+              class="bg-white text-green-600 px-6 py-3 rounded-xl font-semibold shadow-xl hover:scale-105 transition"
+            >
+              🚀 Probar Demo
+            </button>
+
+            <a
+              href="https://wa.me/573144160224"
+              target="_blank"
+              class="bg-black/20 backdrop-blur px-6 py-3 rounded-xl hover:bg-black/30 transition"
+            >
+              💬 Hablar por WhatsApp
+            </a>
+          </div>
+
+          <!-- mini prueba social -->
+          <p class="text-sm mt-6 opacity-80">
+            +50 negocios ya automatizaron su atención
+          </p>
+        </div>
+
+        <!-- MOCKUP CHAT -->
+        <div class="bg-white rounded-2xl shadow-2xl p-4 text-gray-800">
+          <div class="bg-green-500 text-white p-3 rounded-lg mb-3 text-sm">
+            💬 Chat en vivo
+          </div>
+
+          <div class="space-y-2 text-sm">
+            <div class="bg-gray-200 p-2 rounded-lg w-fit">
+              Hola 👋 ¿tienen servicio hoy?
+            </div>
+
+            <div class="bg-green-500 text-white p-2 rounded-lg w-fit ml-auto">
+              ¡Claro! Estamos disponibles 🙌
+            </div>
+
+            <div class="bg-gray-200 p-2 rounded-lg w-fit">
+              Quiero hacer una PQRS
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEMA (MÁS VISUAL) -->
+    <section class="py-20 bg-gray-50 text-center">
+      <h2 class="text-4xl font-bold mb-6">
+        Estás perdiendo clientes sin darte cuenta 😬
+      </h2>
+
+      <p class="text-gray-600 mb-12">
+        Cada mensaje sin responder es una venta perdida
+      </p>
+
+      <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 px-6">
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+          ⏳ Respondes tarde
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+          😡 Clientes insatisfechos
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+          💸 Pierdes ventas
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFICIOS PRO -->
+    <section class="py-20">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold mb-12">
+          Lo que obtienes con nuestro chatbot
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-10">
+          <div
+            class="p-6 rounded-2xl bg-gradient-to-br from-white to-gray-100 shadow-xl hover:scale-105 transition"
+          >
+            <div class="text-3xl mb-3">⚡</div>
+            <h3 class="font-bold text-lg mb-2">Respuesta inmediata</h3>
+            <p class="text-gray-600">Atiende clientes 24/7 automáticamente</p>
+          </div>
+
+          <div
+            class="p-6 rounded-2xl bg-gradient-to-br from-white to-gray-100 shadow-xl hover:scale-105 transition"
+          >
+            <div class="text-3xl mb-3">📊</div>
+            <h3 class="font-bold text-lg mb-2">Gestión PQRS</h3>
+            <p class="text-gray-600">
+              Organiza solicitudes sin perder información
+            </p>
+          </div>
+
+          <div
+            class="p-6 rounded-2xl bg-gradient-to-br from-white to-gray-100 shadow-xl hover:scale-105 transition"
+          >
+            <div class="text-3xl mb-3">📲</div>
+            <h3 class="font-bold text-lg mb-2">Escala a humano</h3>
+            <p class="text-gray-600">Conecta con asesor vía WhatsApp</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA PRO -->
+    <section class="py-20 bg-gray-100">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold mb-12">Así funciona</h2>
+
+        <div class="grid md:grid-cols-3 gap-10">
+          <div class="p-6 bg-white rounded-2xl shadow">
+            <div class="text-4xl mb-4">1️⃣</div>
+            <p>El cliente escribe desde web o WhatsApp</p>
+          </div>
+
+          <div class="p-6 bg-white rounded-2xl shadow">
+            <div class="text-4xl mb-4">2️⃣</div>
+            <p>El bot responde automáticamente</p>
+          </div>
+
+          <div class="p-6 bg-white rounded-2xl shadow">
+            <div class="text-4xl mb-4">3️⃣</div>
+            <p>Si es necesario → asesor humano</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL PRO -->
+    <section
+      class="py-24 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-center"
+    >
+      <h2 class="text-4xl font-bold mb-6">Empieza a vender más desde hoy 🚀</h2>
+
+      <p class="mb-8 opacity-90">Automatiza tu negocio en menos de 24 horas</p>
+
+      <button
+        class="bg-white text-green-600 px-8 py-4 rounded-xl font-bold shadow-xl hover:scale-105 transition"
+      >
+        💰 Comprar Chatbot
+      </button>
+    </section>
+
+    <!--  -->
+    <div class="chat-container" id="chatContainer">
+      <!-- Header del chat -->
+      <div class="chat-header">
+        <div class="chat-title">
+          <span>💬 PQRS y Atención</span>
+        </div>
+        <button class="close-chat" id="closeChat">✕</button>
+      </div>
+
+      <!-- Mensajes -->
+      <div class="chat-messages" id="chatMessages">
+        <div class="message bot-message">
+          <div class="message-content">
+            ¡Hola! 👋<br />
+            ¿En qué puedo ayudarte hoy?
+          </div>
+        </div>
+      </div>
+
+      <!-- Input del usuario -->
+      <div class="chat-input-container">
+        <div class="chat-input-wrapper">
+          <input
+            type="text"
+            id="messageInput"
+            placeholder="Escribe tu mensaje..."
+            maxlength="500"
+          />
+          <button id="sendBtn" disabled>Enviar</button>
+        </div>
+        <div class="quick-actions">
+          <button
+            class="quick-btn"
+            data-message="Necesito hablar con un asesor"
+          >
+            Asesor
+          </button>
+          <button class="quick-btn" data-message="Tengo una queja (PQRS)">
+            PQRS
+          </button>
+          <button class="quick-btn" data-message="Consulta general">
+            Consulta
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botón flotante para abrir chat -->
+    <div class="chat-toggle" id="chatToggle">
+      <span>💬</span>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
