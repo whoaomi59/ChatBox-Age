@@ -11,7 +11,7 @@ class WhatsAppChat {
 
         // Configuración de WhatsApp
         this.whatsappNumber = '573144160224'; // Cambia por tu número
-        this.companyName = 'Tu Empresa';
+        this.companyName = 'Nombre Empresa';
         this.isConnected = navigator.onLine;
 
         // Historial de conversación para contexto
@@ -208,19 +208,8 @@ class WhatsAppChat {
     }
 
     buildContextMessage() {
-        let context = `Hola ${this.companyName}! 👋\n\n`;
-        
-        if (this.conversationHistory.length > 1) {
-            context += `📋 <strong>Contexto de la conversación:</strong>\n`;
-            this.conversationHistory.slice(-3).forEach((msg, i) => {
-                context += `${msg.role === 'user' ? '👤 Cliente' : '🤖 Bot'}: ${msg.content}\n`;
-            });
-            context += '\n';
-        }
-
-        context += `💬 <strong>Mensaje actual:</strong> ${this.conversationHistory[this.conversationHistory.length - 1]?.content || ''}\n\n`;
-        context += `⏰ ${new Date().toLocaleString('es-CO')}\n\n`;
-        context += `¡Necesito atención humana! 🙏`;
+        let context = `Hola ${this.companyName}!\n\n`;
+        context += `¡Necesito atención humana!`;
 
         return context;
     }
