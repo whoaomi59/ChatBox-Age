@@ -1,0 +1,254 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* VARIABLES (más profesional y fácil de cambiar colores) */
+:root {
+  --primary: #25d366;
+  --primary-dark: #128c7e;
+  --bg: #f0f2f5;
+  --white: #ffffff;
+  --gray: #e4e6eb;
+  --text: #1c1e21;
+}
+
+/* BODY */
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+}
+
+/* ================= CHAT ================= */
+
+.chat-container {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 360px;
+  height: 520px;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+
+  /* ANIMACIÓN */
+  transform: translateY(20px) scale(0.95);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.chat-container.active {
+  display: flex;
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* HEADER */
+.chat-header {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-header span {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* BOTÓN CERRAR */
+.close-chat {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 6px 10px;
+  transition: 0.2s;
+}
+
+.close-chat:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* MENSAJES */
+.chat-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  background: url("https://www.transparenttextures.com/patterns/cubes.png"),
+    #f0f2f5;
+}
+
+/* MENSAJE */
+.message {
+  margin-bottom: 12px;
+  display: flex;
+  animation: fadeIn 0.3s ease;
+}
+
+/* BURBUJAS */
+.message-content {
+  max-width: 75%;
+  padding: 10px 14px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* BOT */
+.bot-message {
+  justify-content: flex-start;
+}
+
+.bot-message .message-content {
+  background: white;
+  border-radius: 18px 18px 18px 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* USER */
+.user-message {
+  justify-content: flex-end;
+}
+
+.user-message .message-content {
+  background: var(--primary);
+  color: white;
+  border-radius: 18px 18px 5px 18px;
+}
+
+/* INPUT */
+.chat-input-container {
+  padding: 12px;
+  background: white;
+  border-top: 1px solid #eee;
+}
+
+.chat-input-wrapper {
+  display: flex;
+  gap: 8px;
+}
+
+/* INPUT MODERNO */
+.chat-input-wrapper input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  outline: none;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.chat-input-wrapper input:focus {
+  border-color: var(--primary);
+}
+
+/* BOTÓN ENVIAR */
+.chat-input-wrapper button {
+  padding: 10px 16px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.chat-input-wrapper button:hover {
+  background: var(--primary-dark);
+}
+
+.chat-input-wrapper button:disabled {
+  background: #ccc;
+}
+
+/* BOTONES RÁPIDOS */
+.quick-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.quick-actions button {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 20px;
+  background: #f1f1f1;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.quick-actions button:hover {
+  background: #e0e0e0;
+}
+
+/* BOTÓN FLOTANTE */
+.chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 65px;
+  height: 65px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+  box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.chat-toggle:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* ANIMACIONES */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* SCROLL BONITO */
+.chat-messages::-webkit-scrollbar {
+  width: 5px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .chat-container {
+    width: calc(100vw - 20px);
+    height: 85vh;
+    right: 10px;
+    left: 10px;
+  }
+}
